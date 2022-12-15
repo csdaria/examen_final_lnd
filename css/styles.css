@@ -1,0 +1,146 @@
+:root{
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --veryDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+}
+
+html{
+    font-size:62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.main{
+    margin:0 auto; 
+    max-width:1200px;
+    background-color: var(--veryLightGray);
+    text-align:center;
+    margin:2rem;
+}
+
+.title{
+    color:var(--grayishBlue);
+    font-size:3rem;
+    padding-top:10rem;
+    font-weight: 100;
+    margin:0;
+}
+
+.bold_title{
+    color:var(--veryDarkBlue);
+    font-size:3rem;
+    margin:0;
+}
+
+.desc{
+    color:var(--grayishBlue);
+    line-height:2;
+    margin:2rem;
+    font-size:2rem;
+    width:90%;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:repeat(4, 1fr);
+    grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4";
+    justify-items:center;
+    padding:40px 0 40px 0;
+    text-align:left;
+    gap:3rem; 
+}
+
+.card-item{
+    width:90%;
+    max-width:350px;
+    max-height: 800px;
+    box-shadow:0 5px 18px -5px hsl(212, 85%, 65%, .5);
+    border-radius: 6px;
+    border-top: 6px solid var(--cyan);
+    grid-area:card1;
+    
+
+}
+.card-item:nth-child(2){
+    grid-area:card2;
+    border-top: 6px solid var(--red);
+
+}
+
+.card-item:nth-child(3){
+    grid-area:card3;
+    border-top: 6px solid var(--orange);
+
+}
+
+.card-item:nth-child(4){
+    grid-area:card4;
+    border-top: 6px solid var(--blue);
+}
+
+.car_title{
+    margin:2rem;
+    color:var(--veryDarkBlue);
+    font-size:2.5rem;
+}
+
+.card_desc{
+    margin:2rem;
+    color:var(--grayishBlue);
+    font-size:1.5rem;
+    line-height:2;
+}
+
+.icon{
+    width:max-content;
+    margin-left:auto;
+}
+
+@media (min-width:768px){
+    .main{
+        margin:0 auto;
+        width:100%;
+
+    }
+
+    .desc{
+        margin:2rem auto;
+        width:50%;
+        
+    }
+
+    .container{
+        gap:1rem;
+        grid-template-columns:repeat(3, 1fr);
+        grid-template-areas:
+        ".       card1       ."
+        "card2   card1   card3"
+        "card2   card4   card3"
+        ".       card4       .";
+        
+    }
+
+}
+
+
+
+
+
